@@ -60,11 +60,11 @@ public class StudentDao {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
-/*       Object mergeStudent = session.merge(student);
-      session.remove(mergeStudent);*/
-            final Query sqlQuery = session.createSQLQuery("DELETE FROM student WHERE id=" + student.getId());
-            int result = sqlQuery.executeUpdate();
-            System.out.println("Rows affected: " + result);
+            Object mergeStudent = session.merge(student);
+            session.remove(mergeStudent);
+//            final Query sqlQuery = session.createSQLQuery("DELETE FROM student WHERE id=" + student.getId());
+//            int result = sqlQuery.executeUpdate();
+//            System.out.println("Rows affected: " + result);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {

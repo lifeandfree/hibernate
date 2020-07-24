@@ -47,7 +47,7 @@ public class App {
 
 
         studentDao.insertStudent();
-//        studentDao.deleteStudent(tempStudent1);
+        studentDao.deleteStudent(tempStudent1);
 
         List<Student> students = studentDao.getStudents();
         System.out.println("==========================================");

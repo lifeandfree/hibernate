@@ -10,7 +10,7 @@ public class App {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
 
-        Student student = new Student("Ivan1", "Bunin", "ivanbu@javaguides.com");
+        Student student = new Student("Ivan", "Bunin", "ivanbu@javaguides.com");
         System.out.println(student);
         entityManager.persist(student);
         entityManager.getTransaction().commit();
@@ -32,8 +32,9 @@ public class App {
         System.out.println("=====");
         final Student student1 = entityManager2.getReference(Student.class, student.getId());
         System.out.println("=====");
-        System.out.println(student1);
+
         entityManager2.getTransaction().commit();
+        System.out.println(student1);
         entityManager2.close();
 
         JPAUtil.shutdown();
