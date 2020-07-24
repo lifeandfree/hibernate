@@ -1,0 +1,5 @@
+rootProject.name = 'hibernate'
+include 'hibernate-jpa'
+include 'hibernate-xml'
+include 'hibernate-java'
+
